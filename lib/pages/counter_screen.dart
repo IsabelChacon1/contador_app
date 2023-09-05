@@ -40,16 +40,14 @@ class _CounterScreenState extends State<CounterScreen> {
                   contador++;
                 });
               }),
-          FloatingActionButton(
-            shape: StadiumBorder(),
-            onPressed: () {
-              setState(() {
-                if (contador == 0) return;
-                contador--;
-              });
-            },
-            child: const Icon(Icons.exposure_minus_1_rounded),
-          ),
+          CustomButton(
+              icono: Icons.exposure_minus_1_rounded,
+              onPressed: () {
+                setState(() {
+                  if (contador == 0) return;
+                  contador--;
+                });
+              }),
           FloatingActionButton(
             shape: StadiumBorder(),
             onPressed: () {
@@ -65,6 +63,7 @@ class _CounterScreenState extends State<CounterScreen> {
   }
 } //fin clase _CounterScreenState
 
+//Esta clase es para ahorrar código
 class CustomButton extends StatelessWidget {
   final IconData icono;
   final VoidCallback? onPressed;
